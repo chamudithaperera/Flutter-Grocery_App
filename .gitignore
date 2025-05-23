@@ -1,0 +1,80 @@
+# ========================================
+# Node.js and Express (Backend)
+# ========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.*
+
+
+# Logs
+logs
+*.log
+logs/**/*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# ========================================
+# Flutter (Frontend)
+# ========================================
+# Flutter/Dart
+.dart_tool/
+.packages
+.pub-cache/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+
+# Android
+android/.gradle/
+android/app/build/
+android/local.properties
+
+# iOS
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/.symlinks/
+ios/Pods/
+ios/Runner.xcworkspace/
+ios/build/
+
+# Web
+web/build/
+
+# macOS
+macos/Flutter/GeneratedPluginRegistrant.swift
+macos/Flutter/ephemeral/
+macos/build/
+
+# Windows
+windows/flutter/ephemeral/
+windows/build/
+
+# Linux
+linux/flutter/ephemeral/
+linux/build/
+
+# VS Code
+.vscode/
+
+# IntelliJ/Android Studio
+.idea/
+*.iml
+
+# Others
+*.lock
+*.bak
+*.swp
+*.tmp
+
+# ========================================
+# Optional: Git-specific
+# ========================================
+.git/
+.gitattributes
