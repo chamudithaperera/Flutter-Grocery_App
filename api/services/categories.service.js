@@ -67,3 +67,19 @@ async function updateCategory(params, callback) {
             return callback(error);
          });
 }
+
+async function deleteCategory(params, callback) {
+    const categoryId = params.categoryId;
+        category
+         .findByIdAndDelete(categoryId)
+         .then((response) => {
+            if(!response) {
+                return callback("Not found category with ID " + categoryId);
+            } else {
+                return callback(null, response);
+            }
+         })
+         .catch((error) => {
+            return callback(error);
+         });
+}
