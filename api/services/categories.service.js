@@ -51,3 +51,19 @@ async function getCategoryById(params, callback) {
             return callback(error);
          });
 }
+
+async function updateCategory(params, callback) {
+    const categoryId = params.categoryId;
+        category
+         .findByIdAndUpdate(categoryId, params, {useFindAndModify: false})
+         .then((response) => {
+            if(!response) {
+                return callback("Not found category with ID " + categoryId);
+            } else {
+                return callback(null, response);
+            }
+         })
+         .catch((error) => {
+            return callback(error);
+         });
+}
