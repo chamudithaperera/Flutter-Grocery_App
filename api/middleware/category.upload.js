@@ -9,3 +9,15 @@ const storage = multer.diskStorage({
         cb(null, Date.now() + "-"+ file.originalname);
     }
 });
+
+const fileFilter = (req, file, callback) => {
+    const acceptableExt = [".jpg", ".jpeg", ".png"];
+    if(!acceptableExt.includes(path.extname(file.originalname))) {
+        return callback(new Error("Only .jpg, .jpeg and .png file formats are allowed!"));
+    }
+    const fileSize = parseInt(req.headers["content-length"]);
+    if(fileSize > 1048576) {
+        return callback(new Error("File size is too large, should be less than 5MB"));
+    }
+    callback(null, true);
+};
