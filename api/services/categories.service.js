@@ -35,3 +35,19 @@ async function getCategories(params, callback) {
             return callback(error);
          });
 }
+
+async function getCategoryById(params, callback) {
+    const categoryId = params.categoryId;
+        category
+         .findById(categoryId, "categoryName categoryImage")
+         .then((response) => {
+            if(!response) {
+                return callback("Not found category with ID " + categoryId);
+            } else {
+                return callback(null, response);
+            }
+         })
+         .catch((error) => {
+            return callback(error);
+         });
+}
