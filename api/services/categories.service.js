@@ -23,4 +23,15 @@ async function getCategories(params, callback) {
          : {};
          let perPage = Math.abs(params.pageSize) || MONGO_DB_CONFIG.PAGE_SIZE;
          let page = (Math.abs(params.page) || 1) - 1;
-    }
+
+         category
+         .find(condition, "categoryName categoryImage")
+         .limit(perPage)
+         .skip(perPage * page)
+         .then((response) => {
+            return callback(null, response);
+         })
+         .catch((error) => {
+            return callback(error);
+         });
+}
