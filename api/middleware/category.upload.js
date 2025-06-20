@@ -27,3 +27,5 @@ let upload = multer({
     fileFilter: fileFilter,
     fileSize: 1048576,
 });
+
+module.exports = upload.single("categoryImage");
